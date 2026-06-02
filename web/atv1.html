@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+
+        #container{
+            height: 400px;
+            width: 400px;
+            border: 5px solid black;
+            position: fixed;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+        }
+
+        .box{
+            display: block;
+            border: 1px solid red;
+            height: 100px;
+            width: 100px;
+            text-align: center;
+            line-height: 100px;
+        }
+
+        #id1.box{background-color: maroon;}
+
+        #id1{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            background-color: red;
+        }
+
+        #id2{
+            position: absolute;
+            bottom:0px;
+            background-color: blue;
+        }
+
+        #id3{
+            position: absolute;
+            left: 150px;
+            top: 150px;
+            border-radius: 50%;
+            background-color: yellow;
+            }
+
+        #id4{
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            background-color: green;
+        }
+        #id5{
+            position: absolute;
+            top: 0px;
+            background-color: purple;
+        }
+        /* 
+        caso o: top/buttom: 50% right/left: 50% n fique no meio use:  
+        transform: translate(-50%, -50%); // pode usar +50% tbm;;
+        */
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="id1" class="box">1</div>
+        <div id="id2" class="box">2</div>
+        <div id="id3" class="box">3</div>
+        <div id="id4" class="box">4</div>
+        <div id="id5" class="box">5</div>
+    </div>
+    <div class="box">box6</div>
+</body>
+</html>
