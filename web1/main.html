@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+/*Criar variavel*/
+:root{
+    --tamanho: 100px;    
+}
+
+/*Criação de animação*/
+        .box{
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        animation: move 2s infinite;
+}
+
+@keyframes move{
+    0%{transform: translateX(0);}
+
+    50%{transform: translate(40px) rotate(500deg);}
+    100%{transform: translateX(0px) rotate(0deg);}
+}
+/*Atividade*/
+
+        .Foguetinho{
+            font-size: 100px;
+            position: fixed;
+            bottom: 0px;
+            left: 50%;
+            transform: rotate(-45deg);
+            animation: voar 4s linear infinite;          
+
+        }
+
+        @keyframes voar{
+            from{
+                bottom: 0px;
+            } to{
+                bottom: 100vh;
+            }
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="descricao">
+        <h1>Animação</h1>
+        <p>Animate permite definirmos animações para elementos HTML, definindo o inicio.</p>
+
+    </div>
+    <pre>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation: move 2s infine;
+        --animation: name duration timing-function delay steration-count direction fill-mode;
+
+        }
+
+        @keyframes move{
+            0% {transform: translateX(0);}
+            50% { transform: translateX(100px);}
+            100% { transform: translateX(200px);}
+        }
+    </pre>
+
+    <div>
+        <div class="box">box1</div>
+        <div class="box">box2</div>
+        <span class="Foguetinho">🚀</span>
+    </div>
+
+  
+</body>
+</html>
