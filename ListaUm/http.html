@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocolo HTTP</title>
+</head>
+<body>
+     <div>
+    <h2>Menu</h2>
+    
+        <a href="historia_web.html">História da web</a> <br>
+        <a href="http.html">HTTP</a> <br>
+        <a href="index.html">Estados</a> <br>
+        <a href="curriculo.html">Curriculo</a> <br>
+        <a href="contato.html">Contato</a> <br>
+    </div>
+    <hr>
+
+  <div>
+    <h1>Protocolo HTTP e como é usado na web</h1>
+    
+    <h2>O papel do HTTP na comunicação entre navegador e servidor</h2>
+    <p>O HTTP é o protocolo responsável pela comunicação entre o navegador e o servidor. Ele permite que páginas, imagens e outros recursos sejam solicitados e enviados pela Internet.</p>
+
+    <h2>Cliente, servidor, requisição e resposta</h2>
+    <p>O cliente é o navegador utilizado pelo usuário. O servidor é o computador que
+    armazena os arquivos do site. Quando o usuário acessa uma página, o navegador
+    envia uma requisição ao servidor, que responde enviando os dados solicitados.</p>
+
+    <h2>Descrição dos métodos GET e POST;</h2>
+    <p><strong>GET:</strong>Utilizado para solicitar informações ao servidor.</p>
+    <p><strong>POST:</strong>Utilizado para enviar informações ao servidor.</p>
+
+    <h2>Exemplo de uma requisição HTTP;</h2>
+    <pre>
+    POST / HTTP/1.1 
+    Host: foo.com
+    Content-Type: application/x-www-form-urlencoded
+    Content-Length: 13
+    </pre>
+
+    <h2>Exemplo de uma resposta HTTP;</h2>
+    <pre>
+    HTTP/1.1 200 OK
+    Cache-Control: no-cache, must-revalidate
+    Content-Type: text/html; charset=ISO-8859-1
+    </pre>
+
+    <h2>5 códigos de status HTTP</h2>
+    <ul>
+    <li><strong>200 OK:</strong> requisição realizada com sucesso.</li>
+    <li><strong>302 Found:</strong> redirecionamento temporário.</li>
+    <li><strong>400 Bad Request:</strong> requisição inválida.</li>
+    <li><strong>404 Not Found:</strong> recurso não encontrado.</li>
+    <li><strong>500 Internal Server Error:</strong> erro interno do servidor.</li>
+    </ul>
+  </div>
+</body>
+</html>
