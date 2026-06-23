@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de IMC</title>
+</head>
+<body>
+<h1>IMC</h1>
+
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome">
+    
+    <label for="Peso">Peso(KG)</label>
+    <input type="number" name="Peso" id="peso">
+
+    <label for="altura">Altura(M)</label>
+    <input type="number" name="altura" id="altura">
+
+    <button>Calcular</button>
+
+    <p id="resultadoIMC"></p>
+    <p id="classificacao"></p>
+    <img src="perfil.jpg" id="perfil">
+
+    <script>
+        const pesoInput = document.getElementById("peso");
+        const alturaInput = document.getElementById("altura");
+        const resultadoIMC = document.getElementById("resultadoIMC");
+        const classificacao = document.getElementById("classificacao");
+        const button = dcoument.querySelector("button");
+
+        function calcularIMC(peso, altura){
+            return peso / (altura * altura);
+        }
+        button.addEventListener("click", ()=>{
+            const peso = parsefloat(pesoInput.value);
+            const altura = parsefloat(alturaInput.value);
+        })
+
+        
+
+    </script>
+</body>
+</html>
