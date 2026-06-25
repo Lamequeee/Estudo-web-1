@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat de conversa</title>
+    <style>
+        *{
+        margin: 0;
+        }
+        .container{
+            position: relative;
+            top: 10px;
+            left: 160vh;
+            height: 95vh;
+            width: 25%;
+            border: 1px solid black;
+            border-radius: 10px;
+        }
+        div{
+            position: relative;
+            left: 10px;
+            border: 1px solid black;
+            width: 93%;
+            border-radius: 5px;
+        }
+
+        #box1, #box2, #box3, #box4{
+            display: flex;
+            padding: 5px;
+            padding-right: 0px;
+            margin-bottom: 5px;
+            margin-top: 0px;
+        }
+
+        #box5{
+            margin-top: 20px;
+            padding-top: 10px;
+            height: 35%;
+        }
+        #box6{
+            height: 70%;
+        }
+
+        .nomes{
+            margin-left: 30px;
+        }
+
+        .eu{
+            
+            background-color: rgb(118, 207, 118) ;
+        }
+
+        .foto{
+           font-size: 40px;
+        } 
+        .mulher{
+            position: absolute;
+            right: 200  0;
+        }
+        button{
+            position: relative; left: 200px; width: 80px; margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="nomes">Pedro Silva</p>    
+        <div id="box1">
+            <p class="foto">👨‍🦰</p><p>Olá, tudo bem?</p>
+        </div>
+            <p class="nomes">Eu</p>
+            <div id="box2" class="eu">
+            <p class="foto" class="mulher">👩</p><p>Estou bem sim, e você?</p>
+            </div>
+            <p class="nomes">Pedro Silva</p>   
+            <div id="box3">
+               <p class="foto">👨‍🦰</p> <p>Vamos sair hoje? Sabe conversar e Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, enim.</p>
+            </div>
+            <p class="nomes">Eu</p>
+            <div id="box4" class="eu">
+               <p class="foto"  class="mulher">👩</p> <p>Criatura...</p>
+            </div>
+            <div id="box5"  class="bloco">
+                <div id="box6"><p style="font-size: 20px; margin-left: 5px;">Digite sua mensagem</p></div>
+                <button>Enviar</button>
+            </div>
+            
+    </div>
+</body>
+</html>
