@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+        <style>
+            *{
+                margin: 0;              
+            }
+
+            #container{
+                display: grid;
+                grid-template-columns: 20% 80%;
+                height: 100vh;
+            }
+            #lateral{
+                position: relative;
+                background-color: gray;
+                color: white;
+            }
+            #lateral>img{
+                position: relative;
+                top: 30px;
+                left: 30px;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+            }
+
+            #lateral>p{
+                font-size: 1.2em;
+                position: relative;
+                top: 30px;
+                left: 50px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            #lateral>section>p>strong{
+                font-size: 1.2em;
+                
+            }
+            #lateral>section>p{
+                position: relative;
+                top: 30px;
+                left: 50px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+            #lateral>hr{
+                position: relative;
+                top:30px;
+                left: 50px;
+                width: 220px;
+                margin-top: 15px;
+                margin-bottom: 25px;
+            }
+            #corpo{
+                position: relative;
+                margin-left: 50px;                
+            }
+
+            #corpo>div>hr{
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            #corpo>div{
+                margin-bottom: 15px;
+            }
+            #corpo>div>h3{
+                margin-bottom: 10px;
+            }
+            #corpo>div>p>i{
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            #corpo>div>ul>li{
+                line-height: 1.5;
+            }
+        </style>
+</head>
+<body>
+    <div id="container">
+        <div id="lateral">
+            <img src="olhandoprafrente.webp" alt="pessoa olhando para frente">
+            <p><strong>Pessoal</strong></p>
+            <hr style="background-color: white;">
+
+            <section>
+                <p><strong>Nome</strong></p>
+                <p>Joana</p>
+            </section>
+
+            <section>
+                <p><strong>Endereço</strong></p>
+                <p>Rua da paz, 250</p>
+                <p>7100-112, Lisboa</p>
+            </section>
+
+            <section>
+                <p><strong>Numero de telefone</strong></p>
+                <p>923833487</p>
+            </section>
+
+            <section>
+                <p><strong>Email</strong></p>
+                <p>exemplo@gmail.com</p>
+            </section>
+        </div>
+        <div id="corpo">
+            <div>
+                <h1 style="font-size: 2.5em;">Joana Barbosa</h1>
+            <hr>
+            <p style="line-height: 1.5;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque, laudantium magnam rem at minus dignissimos voluptatum reiciendis facilis pariatur neque optio, aperiam incidunt aliquid molestias qui dolor quo amet iste natus quaerat! Dicta dolor consequuntur aut quaerat impedit, a sunt animi quod quasi! Nam quo iure possimus suscipit cupiditate asperiores itaque vel sed culpa maxime, magnam ipsam aperiam dicta, minima accusamus ab numquam tempore officia quibusdam aliquid nobis. Dicta totam blanditiis asperiores fugiat voluptas consequatur, expedita corporis non eum ducimus nostrum ea maiores illo nobis rem laborum quae? In qui ipsa consectetur iusto alias debitis laborum ipsum corrupti doloribus. Magni.</p>
+            </div>
+
+            <div>
+                <h2>Experiencia Profissional</h2>
+                <hr>
+                <h3>Junior SEO Marketer</h3>
+                <p><i>Cyanca, Lisboa</i></p>
+                <ul>
+                    <li>Pagina on/off SEO</li>
+                    <li>Estratégia</li>
+                    <li>Criação de conteudo</li>
+                    <li>Trabalho com ferramentas online</li>
+                </ul>
+            </div>        
+             <div> 
+                <h3>Assistencia de vendas</h3>
+                <p><i>Salsa, Lisboa</i></p>
+                <ul>
+                    <li>Contribuição </li>
+                    <li>Gestão</li>
+                    <li>Apoio ao cliente</li>
+                </ul>
+                
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+</html>

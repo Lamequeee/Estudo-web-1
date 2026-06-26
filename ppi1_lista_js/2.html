@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+<body>
+    
+    <p id="Stringg"></p>
+    <p id="Numberr"></p>
+    <p id="booleann"></p>
+    <p id="undefinedd"></p>
+    <p id="nulll"></p>
+    <p id="objectt"></p>
+    <p id="arrayy"></p>
+        
+    <script>
+let s = "Olá";         
+let n = 10;             
+let b = true;           
+let u;                  
+let nu = null;       
+let o = {};             
+let a = [];             
+document.getElementById("Stringg").textContent = typeof s;
+document.getElementById("Numberr").textContent = typeof n;
+document.getElementById("booleann").textContent = typeof b;
+document.getElementById("undefinedd").textContent = typeof u;
+if (nu === null) {
+    document.getElementById("nulll").textContent = "null";
+    }
+document.getElementById("objectt").textContent = typeof o;
+document.getElementById("arrayy").textContent = Array.isArray(a);
+ 
+    console.log(s + n);
+    console.log(b * n);
+    console.log(n + b);
+
+    </script>   
+</body> 
+</html> 

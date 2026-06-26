@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandeiras</title>
+    <style>
+                .bandeira{
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+        }
+
+        #bola{
+               position: relative;
+            width: 100px;
+            height: 100px;
+        }
+        #japao>#bola{
+         
+            background-color: red;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #alemanha>#linha1{
+            width: 100%;
+            height: 33.3%;
+            background-color: black;
+        }
+
+        #alemanha>#linha2{
+            width: 100%;
+            height: 33.3%;
+            background-color: red;
+        }
+
+        #alemanha>#linha3{
+            width: 100%;
+            height: 33.3%;
+            background-color: yellow;
+        }
+
+        #holanda>#linha1{
+            width: 100%;
+            height: 33.3%;
+            background-color: red;
+        }
+
+        #holanda>#linha2{
+            width: 100%;
+            height: 33.3%;
+            background-color: white;
+        }
+
+        #holanda>#linha3{
+            width: 100%;
+            height: 33.3%;
+            background-color: blue;
+        }
+
+        #italia{
+            display: flex;
+        }
+        #italia>#linha1{
+            width: 33.3%;
+            height: 100%;
+            background-color: green;
+        }
+
+        #italia>#linha2{
+            width: 33.3%;
+            height: 100%;
+            background-color: white;
+        }
+
+        #italia>#linha3{
+            width: 33.3%;
+            height: 100%;
+            background-color: red;
+        }
+
+        #brasil{
+            background-color: green;
+        }
+
+        #brasil>#triangulo1{
+            position: relative;
+            top: 25%;
+            left: 50.5%;
+            width: 0;
+            height: 0;
+            border-top: 80px solid transparent;
+            border-bottom: 80px solid transparent;
+            border-left: 130px solid yellow;
+        }
+
+        #brasil>#triangulo2{
+            position: relative;
+            left: 22px;
+            bottom: 85px;
+            width: 0;
+            height: 0;
+            border-top: 80px solid transparent;
+            border-bottom: 80px solid transparent;
+            border-right: 130px solid yellow;
+        }
+
+        #brasil>#bola{
+            position: relative;
+            border-radius: 50%;
+            left: 50%;
+            bottom: 60px;
+            transform: translate(-50%, -150%);
+            border-radius: 50%;
+            background-color: blue;
+        }
+
+        #brasil>#bola>#retangulo{
+            position: relative;
+            width: 100%;
+            height: 10px;
+            top: 45%;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+        <h1>Bandeiras</h1>
+        <ul>
+            <li><a href="#japao">Japão</a></li>
+            <li><a href="#alemanha">Alemanha</a></li>
+            <li><a href="#holanda">Holanda</a></li>
+            <li><a href="#italia">Italia</a></li>
+            <li><a href="#brasil">Brasil</a></li>
+        </ul>
+   
+    <div id="container">
+        <div id="japao" class="bandeira">
+            <div id="bola"></div>
+        </div>
+
+        <div id="alemanha" class="bandeira">
+            <div id="linha1"></div>
+            <div id="linha2"></div>
+            <div id="linha3"></div>
+        </div>
+
+        <div id="holanda" class="bandeira">
+             <div id="linha1"></div>
+            <div id="linha2"></div>
+            <div id="linha3"></div>
+        </div>
+
+        <div id="italia" class="bandeira">
+            <div id="linha1"></div>
+            <div id="linha2"></div>
+            <div id="linha3"></div>
+        </div>
+
+        <div id="brasil" class="bandeira">
+            <div id="triangulo1"></div>
+            <div id="triangulo2"></div>
+            <div id="bola"><div id="retangulo"><p style="font-size: 12px; position: relative; bottom: 1px;">Ordem e Progresso</p></div></div>
+            
+        </div>
+
+    </div>
+</body>
+</html>

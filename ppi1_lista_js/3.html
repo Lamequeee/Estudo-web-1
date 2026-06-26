@@ -21,22 +21,80 @@
 
     <p id="resultadoIMC"></p>
     <p id="classificacao"></p>
-    <img src="perfil.jpg" id="perfil">
-
+    <img src="img/perfil.jpg" id="perfil">
+    
     <script>
         const pesoInput = document.getElementById("peso");
         const alturaInput = document.getElementById("altura");
         const resultadoIMC = document.getElementById("resultadoIMC");
         const classificacao = document.getElementById("classificacao");
-        const button = dcoument.querySelector("button");
+        const button = document.querySelector("button");
+
+        let resultado=document.createElement("img");
 
         function calcularIMC(peso, altura){
             return peso / (altura * altura);
         }
+
+        const perfil = document.getElementById("perfil");
+
         button.addEventListener("click", ()=>{
-            const peso = parsefloat(pesoInput.value);
-            const altura = parsefloat(alturaInput.value);
-        })
+            const peso = parseFloat(pesoInput.value);
+            const altura = parseFloat(alturaInput.value);
+
+             const calc = calcularIMC(peso, altura);
+             const faixa = Math.floor(calc);
+             
+             resultadoIMC.innerText = "IMC: " + calc.toFixed(2);
+
+        if (calc < 18.5) {
+            classificacao.innerText = "Abaixo do peso";
+        }
+        else if (calc < 25) {
+            classificacao.innerText = "Peso normal";
+        }
+        else if (calc < 30) {
+            classificacao.innerText = "Sobrepeso";
+        }
+        else if (calc < 35) {
+            classificacao.innerText = "Obesidade Grau I";
+        }
+        else if (calc < 40) {
+            classificacao.innerText = "Obesidade Grau II";
+        }
+        else {
+            classificacao.innerText = "Obesidade Grau III";
+        }
+
+              switch (true) {
+    case calc < 18.5:
+        perfil.src = "img/abaixopeso.png";
+        break;
+
+    case calc < 25:
+        perfil.src = "img/normal.png";
+        break;
+
+    case calc < 30:
+        perfil.src = "img/sobrepeso.png";
+        break;
+
+    case calc < 35:
+        perfil.src = "img/obesidade1.png";
+        break;
+
+    case calc < 40:
+        perfil.src = "img/obesidade2.png";
+        break;
+
+    default:
+        perfil.src = "img/  obesidade3.png";
+}
+        });
+
+       
+   
+        
 
         
 
