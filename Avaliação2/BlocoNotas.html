@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloco de Notas</title>
+    <style>
+        *{
+            margin: 0;
+
+        }
+
+        body{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #listas{
+            margin-left: 10px;
+        }
+
+        #listas>#Adicionar{
+            position: relative;
+            top: 20px;
+            width: 140px;
+            height: 40px;
+            font-size: 1em;
+            margin-bottom: 30px;
+        }
+
+        #listas-notas{
+            border: 1px solid black;
+        }
+
+        hr{
+            position: relative;
+            right: 300px;
+        }
+
+        #Escrever{
+            position: relative;
+            right: 350px;
+            display: flex;
+            flex-direction: column;
+            width: 500px;
+            gap: 10px;
+        }
+        #titulo{
+            width: 500px;
+            height: 20px;
+        }
+
+        #mensagem{  
+            width: 500px;
+            height: 200px;
+        }
+
+        .botoes{
+            display: flex;
+        }
+        #salvar{
+            font-size: 20px;
+            color: black;
+            background-color: yellow;
+            margin: 5px;
+        }
+
+        #Excluir{
+            font-size: 20px;
+            color: white;
+            background-color: red;
+            margin: 5px;
+        }
+
+        #Adicionar{
+            color: white;
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="listas">
+        <h1>Notas</h1>
+        <button id="Adicionar">Adicionar Nota</button>
+        <h2>Notas criadas</h2>
+        <div id="listas-notas"></div>
+    </div>
+    <hr>
+    <div id="Escrever">
+        <h1>Escreva sua ideia!</h1>
+        <input type="text" id="titulo" placeholder="Título">
+        <textarea id="mensagem" placeholder="Escreva aqui"></textarea>
+        <div class="botoes">
+        <button id="salvar">Atualizar</button>
+        <Button id="Excluir">Excluir</Button>
+    </div>
+    </div>
+    
+
+    <script>
+        let notas = JSON.parse(localStorage.getItem('notas')) || [];
+
+        function mostrarlistas(){
+            const barralateral = document.getElementById('listas-notas');
+            barralateral.innerHTML = '';
+            notas.forEach(function(n){
+                const div = document.createElement('div');
+                div.innerText = n.titulo;   
+                 div.onclick = function(){
+            carregarNota(n.id);
+        }
+                barralateral.appendChild(div);
+            });
+        }
+
+           function carregarNota(id) {
+
+            idAtual = id;
+            const nota = notas.find(function(n){
+        return n.id === id;
+    }); 
+            document.getElementById('titulo').value = nota.titulo;
+            document.getElementById('mensagem').value = nota.mensagem;
+        }
+
+        function novaNota() {
+             idAtual = null;    
+            document.getElementById('titulo').value = '';
+            document.getElementById('mensagem').value = '';
+        }
+
+
+        let idAtual = null;
+        function salvarNota() {
+            const titulo = document.getElementById('titulo').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            if(idAtual){
+                const index = notas.findIndex(function(n) {
+            return n.id === idAtual;
+            });
+
+            notas[index] = {
+            id: idAtual,
+            titulo: titulo,
+            mensagem: mensagem
+            };
+            } else {
+                notas.push({
+                id: Date.now(),
+                titulo: titulo,
+                mensagem: mensagem
+            });
+        }
+
+             localStorage.setItem("notas", JSON.stringify(notas));
+             mostrarlistas();
+}
+
+            function ExcluirNota() {
+                 if (idAtual == null) {
+                alert("Nenhuma nota selecionada.");
+                return;
+                }
+            
+                if (confirm('Tem certeza que deseja excluir esta nota?')) {
+                notas = notas.filter(function(n) {
+                return n.id !== idAtual;
+                });
+
+                localStorage.setItem('notas', JSON.stringify(notas));
+                idAtual = null;
+                novaNota();
+                mostrarlistas();
+            }
+        }
+             document.getElementById("Adicionar").onclick = novaNota;
+             document.getElementById("Excluir").onclick = ExcluirNota;
+             document.getElementById("salvar").onclick = salvarNota;
+
+            mostrarlistas();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Titulos</title>
+    <style>
+        *{
+            background-color: rgb(2, 2, 24);
+        }
+
+       #Pesquisar{
+        position: absolute;
+        right: 50%;
+       }
+
+       #campoBusca, #buscarFilmes{
+        border:1px solid white;
+        color: White;
+        height: 35px;
+       }
+
+       #buscarFilmes{
+        background-color: blue;
+       }
+
+       #resultados{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+        position: relative;
+        top: 8  0px;
+       }
+
+       .filme{
+        border: 1px solid white;
+        padding: 10px;
+        text-align: center;
+        color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="Pesquisar">
+    <input type="text" id="campoBusca" placeholder="Digite o nome do filme...">
+    <button id="buscarFilmes">Buscar</button>
+    </div>
+
+    <div id="resultados"></div>
+
+    <script>
+        url="https://www.omdbapi.com/?s="
+        apikey="&apikey=f77bfada"
+        const campoBusca = document.getElementById("campoBusca");
+        const painel = document.getElementById('resultados');
+
+        function PesquisarFilme(){
+            fetch(url+campoBusca.value+apikey)
+            .then( (r)=>{return r.json()} )
+            .then( (o)=>{
+
+                painel.innerHTML = '';
+
+                o.Search.forEach(function(element) {
+                painel.innerHTML += AdicionarFilme(element);
+            });
+             });
+            function AdicionarFilme(filme){
+                str=`
+                    <div class="filme"> 
+                        <p>${filme.Title}</p>  
+                        <img src=${filme.Poster}> 
+                        <h3>${filme.Title}</h3>
+                        <p>Ano: ${filme.Year}</p>
+                        <p>Tipo: ${filme.Type}</p>
+                    </div>
+                `
+                return str;
+            }
+        }
+
+        document.getElementById("buscarFilmes").onclick = PesquisarFilme;
+    </script>
+</body>
+</html>
