@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculdora</title>
+    <style>
+        #container{
+            border: 1px solid black;
+            height: 90vh;
+            width: 70vh;
+        }
+        #tella{
+            position: relative;
+            top: 10px;
+            left: 15px;
+            border: 1px solid black;
+            border-radius: 10px;
+            height: 15vh;
+            width: 65vh;
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        #tella>#tela{
+            position: relative;
+            bottom: 15px;
+            margin-left: 15px;
+        }
+
+        .num{
+            position: relative;
+            top: 25px;
+            left: 25px;
+           display: grid;
+           
+           grid-template-columns: 90px 90px 90px 90px;
+           grid-template-rows: 80px 80px 80px 80px 80px;
+           gap: 10px;
+        }
+
+        #mais, #menos, #vezes, #divisao{
+            background-color: rgb(179, 173, 173);
+        }
+        #igual{
+            background-color: rgba(44, 44, 245, 0.932);
+            grid-column: 4;
+          grid-row: 2 / 6;
+        }
+
+        button{
+            font-size: 2em;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="tella">
+            <p id="tela"></p>
+        </div>
+
+        <div class="num">
+            <button id="mais">+</button>
+            <button id="menos">-</button>
+            <button id="vezes">x</button>
+            <button id="divisao">%</button>              
+            <button id="sete">7</button>
+            <button id="oito">8</button>
+            <button id="nove">9</button>   
+            <button id="igual">=</button>          
+            <button id="seis">6</button>
+            <button id="cinco">5</button>
+            <button id="quatro">4</button>
+            <button id="tres">3</button>
+            <button id="dois">2</button>
+            <button id="um">1</button>
+            <button id="zero">0</button>
+            <button id="ponto">.</button>
+            <button id="apagar">C</button>
+        </div>
+    </div>
+
+    <script>
+        const tela = document.getElementById("tela");
+        
+        const mais = document.getElementById("mais");
+        const menos = document.getElementById("menos");
+        const vezes = document.getElementById("vezes");
+        const divisao = document.getElementById("divisao");
+
+        const sete = document.getElementById("sete");
+        const oito = document.getElementById("oito");
+        const nove = document.getElementById("nove");
+        const seis = document.getElementById("seis");
+        const cinco = document.getElementById("cinco");
+        const quatro = document.getElementById("quatro");
+        const tres = document.getElementById("tres");
+        const dois = document.getElementById("dois");
+        const um = document.getElementById("um");
+        const zero = document.getElementById("zero");
+        const ponto = document.getElementById("ponto");
+        const apagar = document.getElementById("apagar");
+        const igual = document.getElementById("igual");
+        let num1;
+        let num2;
+        let operadores;
+
+sete.addEventListener("click", () => {
+    tela.innerText += "7";
+});
+
+oito.addEventListener("click", () => {
+    tela.innerText += "8";
+});
+
+nove.addEventListener("click", () => {
+    tela.innerText += "9";
+});
+
+seis.addEventListener("click", () => {
+    tela.innerText += "6";
+});
+
+cinco.addEventListener("click", () => {
+    tela.innerText += "5";
+});
+
+quatro.addEventListener("click", () => {
+    tela.innerText += "4";
+});
+
+tres.addEventListener("click", () => {
+    tela.innerText += "3";
+});
+
+dois.addEventListener("click", () => {
+    tela.innerText += "2";
+});
+
+um.addEventListener("click", () => {
+    tela.innerText += "1";
+});
+
+zero.addEventListener("click", () => {
+    tela.innerText += "0";
+});
+
+ponto.addEventListener("click", () => {
+    tela.innerText += ".";
+});
+
+apagar.addEventListener("click", () => {
+    tela.innerText = " ";
+});
+
+mais.addEventListener("click", ()=>{
+    num1 = Number(tela.innerText);
+    operadores = "+";
+    tela.innerText = "";
+}); 
+
+menos.addEventListener("click", ()=>{
+    num1 = Number(tela.innerText);
+    operadores = "-";
+    tela.innerText = "";
+}); 
+
+vezes.addEventListener("click", ()=>{
+    num1 = Number(tela.innerText);
+    operadores = "x";
+    tela.innerText = "";
+}); 
+
+divisao.addEventListener("click", ()=>{
+    num1 = Number(tela.innerText);
+    operadores = "%";
+    tela.innerText = "";
+}); 
+
+igual.addEventListener("click", ()=>{
+    num2 = Number(tela.innerText);
+    if(operadores == "+"){
+    tela.innerText = num1 + num2;
+    }
+
+    if(operadores == "-"){
+    tela.innerText = num1 - num2;
+    }
+
+    if(operadores == "x"){
+    tela.innerText = num1 * num2;
+    }
+
+    if(operadores == "%"){
+    tela.innerText = num1 / num2;
+    }
+});
+
+    </script>
+</body>
+</html>
