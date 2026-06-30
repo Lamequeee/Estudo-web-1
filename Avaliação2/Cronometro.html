@@ -64,18 +64,34 @@
     </div>
 
     <script>
+        let temp = JSON.parse(localStorage.getItem('temp')) || [];
+
         const contagem = document.getElementById("contagem");
         const iniciar = document.getElementById("iniciar");
         const pausar = document.getElementById("pausar");
         const zerar = document.getElementById("zerar");
         let intervalo;
-        let comecar;
 
-        function atualizarHora(){
-            let date=new Date();
-           contagem.innerHTML = date.toLocaleString();
+        function mostrarTempos(){
+            const barralateral = document.getElementById('paradas');
+            barralateral.innerHTML = '';
+            temp.forEach(function(n){
+                const div = document.createElement('div');
+                div.innerText = n.contagem;   
+                barralateral.appendChild(div);
+            });
         }
 
+        function atualizarHora(){
+            const data = new Date();
+            const horas = data.getHours().toString();
+            const minutos = data.getMinutes().toString();
+            const segundos = data.getSeconds().toString();
+            const milissegundos = data.getMilliseconds().toString();
+            contagem.innerHTML= `${horas}:${minutos}:${segundos}`;
+        }
+
+       
 
         iniciar.addEventListener("click", ()=>{
             intervalo=setInterval(atualizarHora, 1000);
@@ -84,6 +100,22 @@
         pausar.addEventListener("click", ()=>{
            clearInterval(intervalo);
         });
+
+            zerar.addEventListener("click", ()=>{
+            contagem.innerText = "00:00:00";
+        });
+
+        function salvartempo() {
+            const contagem = document.getElementById('contagem').innerText;
+            temp.push({
+            contagem: contagem
+            });
+            localStorage.setItem("temp", JSON.stringify(temp));
+            mostrarTempos();
+        }        
+
+    document.getElementById("pausar").onclick = salvartempo
+
     </script>
 </body>
 </html>
